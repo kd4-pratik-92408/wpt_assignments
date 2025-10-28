@@ -1,0 +1,134 @@
+#navbar {
+  height: 60px;
+  width: 100%;
+  background-color: #005691;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar p {
+  margin: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+#heading {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#heading > p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  font-weight: 600;
+}
+
+#home-section {
+  height: 250px;
+  width: 100%;
+  border-top: solid 3px #005691;
+  border-bottom: solid 15px #005691;
+  background-color: #d8e5ea;
+}
+
+#home-section > p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: 600;
+}
+
+#home-section > div {
+  display: flex;
+}
+.card {
+  height: 150px;
+  width: 170px;
+  background-color: rgb(0, 179, 255);
+  border-radius: 3px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boldp {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: xx-large;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+.smallp {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: small;
+  font-weight: 300;
+  color: aliceblue;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-section {
+  height: auto;
+  width: 100%;
+}
+
+.heading2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  font-weight: 600;
+}
+
+#img1 {
+  height: 300px;
+  width: 400px;
+  float: left;
+  margin-right: 20px;
+}
+
+#content {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: 400;
+}
+
+#course-section {
+  background-color: #d8e5ea;
+  border-top: solid 15px #005691;
+  border-bottom: solid 15px #005691;
+  height: auto;
+  width: 100%;
+}
+
+.course {
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#footer {
+  height: 60px;
+  width: 100%;
+  background-color: #005691;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  font-weight: 600;
+  color: aliceblue;
+}

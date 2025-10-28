@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function executeIt() {
+        const today = new Date();
+        const millisecondsDiff =
+          new Date("2026-01-01").getTime() - today.getTime();
+        const aDayInMs = 24 * 60 * 60 * 1000;
+        const daysDiff = Math.round(millisecondsDiff / aDayInMs);
+
+        const days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+
+        const month = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const date = document.getElementById("date-line");
+        date.innerText = `Today is ${
+          days[today.getDay()]
+        }, ${today.getDate()} ${
+          month[today.getMonth()]
+        } ${today.getFullYear()}`;
+        date.style.color = "red";
+        date.style.fontSize = "30px";
+        date.style.fontWeight = "bold";
+
+        const message = document.getElementById("message-line");
+        if (today.getHours <= 12) {
+          message.innerText = `Welcome, and Good Morning to You`;
+        } else {
+          message.innerText = `Welcome, and Good Afternoon to You`;
+        }
+        message.style.color = "red";
+        message.style.fontSize = "30px";
+        message.style.fontWeight = "bold";
+
+        const text = document.getElementById("text");
+        text.style.color = "red";
+        text.style.fontSize = "30px";
+        text.style.fontWeight = "bold";
+
+        const day = document.getElementById("noOfDays-line");
+
+        day.innerText = `${daysDiff}`;
+        day.style.color = "blue";
+        day.style.fontSize = "30px";
+        day.style.fontWeight = "bold";
+      }
+    </script>
+  </head>
+  <body onload="executeIt()">
+    <div><h1>Date and Greating Web Page</h1></div>
+    <div>
+      <p id="date-line"></p>
+      <p id="message-line"></p>
+      <span id="text">No of days left till end of year: </span>
+      <span id="noOfDays-line"></span>
+    </div>
+  </body>
+</html>

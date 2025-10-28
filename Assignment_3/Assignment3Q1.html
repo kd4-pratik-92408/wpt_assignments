@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3 Question 1</title>
+    <style>
+      #div1 {
+        display: flex;
+      }
+      #div1 > div {
+        width: 50%;
+        height: 30px;
+      }
+      #div2 {
+        width: 100%;
+        height: 30px;
+        background-color: green;
+      }
+      #div2 > div {
+        float: right;
+        background-color: blue;
+        height: 30px;
+        width: 4%;
+      }
+
+      #div3 {
+        width: 100%;
+        height: 30px;
+        background-color: green;
+        display: flex;
+        justify-content: space-between;
+      }
+      #div3 > div {
+        height: 30px;
+        width: 4%;
+      }
+
+      #div4 {
+        height: 30px;
+        width: 100%;
+        background-color: red;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      #div4 > div {
+        height: 30px;
+        width: 4%;
+        background-color: blue;
+      }
+
+      #div5 {
+        height: 30px;
+        width: 100%;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #div5 > div {
+        height: 20px;
+        width: 2%;
+        background-color: red;
+      }
+      #div6 {
+        height: 30px;
+        width: 100%;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #div6 > div {
+        height: 30px;
+        width: 4%;
+        background-color: blue;
+      }
+      #div7 {
+        display: flex;
+      }
+      #internaldiv1 {
+        height: 30px;
+        width: 4%;
+        background-color: red;
+      }
+
+      #internaldiv2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      #internaldiv2 > div {
+        height: 10px;
+      }
+      #internaldiv2 > div:nth-child(even) {
+        background-color: blue;
+      }
+      #internaldiv2 > div:nth-child(odd) {
+        background-color: green;
+      }
+
+      #div8 {
+        height: 30px;
+        width: 100%;
+        background-color: green;
+        display: flex;
+        justify-content: space-between;
+      }
+      #div8 > div {
+        height: 30px;
+        width: 4%;
+        background-color: rgb(239, 216, 12);
+      }
+      #div9 {
+        height: 30px;
+        width: 100%;
+        background-color: rgb(239, 216, 12);
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #div9 > div {
+        height: 30px;
+        width: 2%;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>Row1</span>
+      <div id="div1">
+        <div style="background-color: red"></div>
+        <div style="background-color: blue"></div>
+      </div>
+      <span>Row2</span>
+      <div id="div2">
+        <div></div>
+      </div>
+      <!-- <span>Student TODO <br /></span> -->
+      <span>Row3</span>
+      <div id="div3">
+        <div style="background-color: red"></div>
+        <div style="background-color: blue"></div>
+      </div>
+      <span>Row4</span>
+      <div id="div4">
+        <div></div>
+      </div>
+      <span>Row5</span>
+      <div id="div5">
+        <div></div>
+      </div>
+      <span>Row6</span>
+      <div id="div6">
+        <div></div>
+      </div>
+      <span>Row7</span>
+      <div id="div7">
+        <div id="internaldiv1"></div>
+        <div id="internaldiv2">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <span>Row8</span>
+      <div id="div8">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <span>Row9</span>
+      <div id="div9">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 Question 2</title>
+  </head>
+  <body>
+    <div>
+      <label for="name"><h1>Enter Employee Names</h1></label>
+      <input type="text" id="name" name="name" />
+      <button onclick="addName()">Add Name</button>
+      <button onclick="displaySortedNames()">Sort & Display</button>
+      <br />
+      <span id="name-error"></span>
+      <br />
+      <h2>Sorted Employees Names</h2>
+      <ul id="sorted-list"></ul>
+    </div>
+    <script>
+      const names = [];
+      const list = document.getElementById("sorted-list");
+      const addName = () => {
+        const name = document.getElementById("name").value;
+        const name_error = document.getElementById("name-error");
+        if (name === "") {
+          console.log("Please Enter a Name");
+          name_error.innerText = "Please Enter a Name";
+          name_error.style.color = "red";
+        } else {
+          names.push(name);
+          console.log(name);
+          document.getElementById("name").value = "";
+          name_error.innerText = "";
+        }
+      };
+
+      const displaySortedNames = () => {
+        names.sort();
+        list.innerText = "";
+        for (name of names) {
+          list.innerHTML += `<li> ${name} </li>`;
+        }
+      };
+    </script>
+  </body>
+</html>

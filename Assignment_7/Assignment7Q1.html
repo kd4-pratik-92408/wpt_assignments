@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 Question 1</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <center>
+      <div>
+        <img
+          src="./sunbeamlogo.png"
+          alt="Sunbeam Logo"
+          title="Sunbeam Infotech"
+          width="350px"
+          height="80px"
+        />
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">
+                <center><h1>Sunbeam Registration Form</h1></center>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <iframe
+                  width="380"
+                  height="200"
+                  src="https://www.youtube.com/embed/Az5Bt3zUtiM?si=JvCC9ywAiUgrRQE5"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </td>
+              <td>
+                <table>
+                  <tbody>
+                    <form method="get" action="">
+                      <tr>
+                        <td>
+                          <label for="name">Name : </label>
+                        </td>
+                        <td>
+                          <input
+                            id="name"
+                            type="text"
+                            placeholder="Enter Name..."
+                            name="name"
+                          />
+                          <span id="name-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="birthDate">Birth Date : </label>
+                        </td>
+                        <td>
+                          <input id="birthDate" type="date" name="birthdate" />
+                          <span id="birthDate-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="email">Email : </label>
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            placeholder="abc@gmail.com"
+                          />
+                          <span id="email-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="password">Password : </label>
+                        </td>
+                        <td>
+                          <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            name="password"
+                          />
+                          <span id="password-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="address">Address : </label>
+                        </td>
+                        <td>
+                          <textarea
+                            name="address"
+                            id="address"
+                            placeholder="Sunbeam Institute of IT....."
+                          ></textarea>
+                          <span id="address-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="gender">Gender : </label>
+                        </td>
+                        <td>
+                          <input
+                            id="gender"
+                            type="radio"
+                            name="gender"
+                            value="male"
+                          />Male
+                          <input
+                            id="gender"
+                            type="radio"
+                            name="gender"
+                            value="female"
+                          />Female
+                          <span id="gender-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="photo">Upload Photo : </label>
+                        </td>
+                        <td>
+                          <input id="photo" type="file" name="file" />
+                          <span id="photo-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="course">Select Your Course : </label>
+                        </td>
+                        <td>
+                          <select name="course" id="course">
+                            <option value="">Select Course</option>
+                            <option>PG-DAC</option>
+                            <option>PG-DBDA</option>
+                            <option>PG-DMC</option>
+                            <option>PG-DITIS</option>
+                            <option>PG-DESD</option>
+                          </select>
+                          <span id="course-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="skills">Skill Set : </label>
+                        </td>
+                        <td>
+                          <input
+                            type="checkbox"
+                            name="skills"
+                            value="java"
+                          />Java
+                          <input type="checkbox" name="skills" value="cpp" />CPP
+                          <input
+                            type="checkbox"
+                            name="skills"
+                            value="csharp"
+                          />C#
+                          <span id="skills-error"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <input
+                            type="button"
+                            value="Register"
+                            onclick="validate()"
+                          />
+                          <input type="reset" value="Clear" />
+                        </td>
+                      </tr>
+                    </form>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </center>
+    <script>
+      function validate() {
+        validate_name();
+        validate_birthdate();
+        validate_email();
+        validate_gender();
+        validate_address();
+        validate_course();
+        validate_password();
+        validate_photo();
+        validate_skills();
+      }
+
+      const validate_name = () => {
+        const name = $("#name").val();
+        if (name === "") {
+          $("#name-error").text("Name Field Required").css("color", "red");
+        }
+        const name_error = $("#name-error")
+          .text(
+            /^[A-Za-z]{1,10}$/.test(name)
+              ? ""
+              : "Only alphabets allowed max 10 characters"
+          )
+          .css("color", "red");
+      };
+
+      const validate_birthdate = () => {
+        const date = $("#birthDate").val();
+        const birthdate = new Date(date);
+        const today = new Date();
+        let age = today.getFullYear() - birthdate.getFullYear();
+        const m = today.getMonth() - birthdate.getMonth();
+
+        if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+          age--;
+        }
+        const date_error = $("#birthDate-error")
+          .text(age >= 18 ? "Eligible" : "You must be at least 18 years old")
+          .css("color", "red");
+      };
+
+      const validate_email = () => {
+        const email = $("#email").val();
+        if (email === "") {
+          $("#email-error").text("Email is Required").css("color", "red");
+        } else {
+          const email_error = $("#email-error")
+            .text(
+              /^[A-Za-z0-9._%+-]+@gmail\.com$/.test(email)
+                ? "Valid"
+                : "Invalid Email"
+            )
+            .css("color", "red");
+        }
+      };
+
+      const validate_password = () => {
+        const password = $("#password").val();
+
+        if (password === "") {
+          $("#password-error")
+            .text("Password can Not Be Empty")
+            .css("color", "red");
+        } else {
+          $("#password-error")
+            .text(
+              /^(?=.*[A-Z])(?=.*[@#_$-])[A-Za-z0-9@#_$-]{1,15}$/.test(password)
+                ? "Valid Password"
+                : "At least one uppercase letter. At least one special character (@, #, _, $, -). Can contain alphabets (and optionally digits). Maximum length = 15 characters"
+            )
+            .css("color", "red");
+        }
+      };
+
+      const validate_address = () => {
+        const address = $("#address").val().trim();
+        if (address === "") {
+          $("#address-error").text("Address is Required").css("color", "red");
+        } else {
+          $("#address-error").text("");
+        }
+      };
+
+      const validate_photo = () => {
+        const photo = $("#photo")[0];
+        const error = $("#photo-error");
+
+        if (!photo.files || photo.files.length === 0) {
+          error.text("Photo is Required").css("color", "red");
+          return false;
+        } else {
+          error.text("");
+        }
+      };
+
+      const validate_gender = () => {
+        if ($("input[name='gender']:checked").length === 0) {
+          $("#gender-error")
+            .text(" Please select at least one option")
+            .css("color", "red");
+        } else {
+          $("#gender-error").text("");
+        }
+      };
+
+      const validate_course = () => {
+        const course = $("#course").val();
+        if (course === "") {
+          $("#course-error")
+            .text("Please Select Any One Course")
+            .css("color", "red");
+        } else {
+          $("#course-error").text("");
+        }
+      };
+
+      const validate_skills = () => {
+        if ($("input[name='skills']:checked").length === 0) {
+          $("#skills-error")
+            .text("Please select at least one skill")
+            .css("color", "red");
+        } else {
+          $("#skills-error").text("");
+        }
+      };
+    </script>
+  </body>
+</html>
